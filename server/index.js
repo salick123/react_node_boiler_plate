@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         <!DOCTYPE HTML>
         <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="/styles.client.css">
+                <link rel="stylesheet" type="text/css" href="/client.css">
             </head>
             <body>
                 <div id = "root_app">${homeCont}</div>

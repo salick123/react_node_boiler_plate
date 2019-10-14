@@ -17,23 +17,13 @@ module.exports = [{
         __filename: true,
         __dirname: true
     },
-    optimization: {
-        splitChunks: {
-          cacheGroups: {
-            styles: {
-              name: 'styles',
-              test: /\.css$/,
-              chunks: 'all',
-              enforce: true,
-            },
-          },
-        },
-      },
-      plugins: [
-        new MiniCssExtractPlugin({
-          filename: 'server.css',
-        }),
-      ],
+    plugins: [
+            new MiniCssExtractPlugin({
+            filename: "do_not_use.css",
+            disable: false,
+            allChunks: true
+        })
+    ],
     module: {
         rules: [
             {
@@ -47,7 +37,7 @@ module.exports = [{
             {
                 test: /\.css$/,
 				exclude: ['/node_modules', '/dist'],
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             }
         ]
     }
@@ -67,23 +57,13 @@ module.exports = [{
         __filename: true,
         __dirname: true
     },
-    optimization: {
-        splitChunks: {
-          cacheGroups: {
-            styles: {
-              name: 'styles',
-              test: /\.css$/,
-              chunks: 'all',
-              enforce: true,
-            },
-          },
-        },
-      },
-      plugins: [
-        new MiniCssExtractPlugin({
-          filename: 'client.css',
-        }),
-      ],
+    plugins: [
+            new MiniCssExtractPlugin({
+            filename: "client.css",
+            disable: false,
+            allChunks: true
+        })
+    ],
     module: {
         rules: [
             {
@@ -96,7 +76,8 @@ module.exports = [{
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+				exclude: ['/node_modules', '/dist'],
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             }
         ]
     }
