@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Home from '../client/containers/Home';
+import Home from '../app/containers/Home';
 const app = express();
 app.use('/', express.static('dist/client'));
 app.use(bodyParser.json());

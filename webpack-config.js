@@ -3,7 +3,7 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = [{
     target: "node",
-    entry: './server/index.js',
+    entry: './src/server/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'server.js'
@@ -44,7 +44,7 @@ module.exports = [{
 },
 {
     target: "node",
-    entry: './client/index.js',
+    entry: './src/client/index.js',
     output: {
         path: path.resolve(__dirname, 'dist/client'),
         filename: 'client.js'
